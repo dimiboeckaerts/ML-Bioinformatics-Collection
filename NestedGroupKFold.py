@@ -27,7 +27,7 @@ def NestedGroupKFold(model, X, y, parameter_grid, groups, class_weights, cv_scor
     for train_outer, test_outer in outer_cv.split(X, y, groups):
         X_train, X_test = X[train_outer], X[test_outer]
         y_train, y_test = y[train_outer], y[test_outer]
-        groups_train, groups_test = groups_array[train_outer], groups_array[test_outer]
+        groups_train, groups_test = groups[train_outer], groups[test_outer]
         
         # define inner loop (in GridSearchCV)
         tuned_model = GridSearchCV(model, cv=inner_cv, param_grid=parameter_grid, scoring=cv_score)
