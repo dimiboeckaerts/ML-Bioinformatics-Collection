@@ -5,13 +5,13 @@ def multiclass_precision_recall(y_true, probas_pred, classes, make_plot=False):
     
     Dependencies: matplotlib.pyplot, sklearn.preprocessing, sklearn.metrics
     
-    Inputs:
+    Input:
     - y-true: true labels
     - probas_pred: multiclass probabilities
     - classes: unique classes needed for binarization (not class weights or counts, see label_binarize in sklearn)
     - make_plot: boolean (default: False)
     
-    Outputs: if plot=False (default): P, R and AUC for every class (dicts); else: a figure.
+    Output: if plot=False (default): P, R and AUC for every class (dicts); else: a figure.
     """
     # define needed variables
     y_true_binary = label_binarize(y_true, classes)
